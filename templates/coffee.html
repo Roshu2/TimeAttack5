@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="post" style="display: flex; flex-direction: column;">
+    {% csrf_token %}
+    <label><input type="checkbox" name="menu" value="cold-blue"> 콜드 블루 커피</label>
+    <label><input type="checkbox" name="menu" value="brud-coffee"> 브루드 커피</label>
+    <label><input type="checkbox" name="menu" value="espresso"> 에스프레소</label>
+    <button type="submit" style="width: 40px">OK</button>
+</form>
+<div>
+    {% for menu in my_menu %}
+    <p>{{ menu.name }}</p>
+    {% endfor %}
+</div>
+</body>
+</html>
